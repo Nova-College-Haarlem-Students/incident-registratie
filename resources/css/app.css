@@ -485,8 +485,8 @@ h1 {
     flex-direction: column;
     align-items: center;
     padding: 0 24px;
-    background: #f1f5f9;
-    color: #000;
+    background: linear-gradient(135deg, #020817 0%, #111827 45%, #0f172a 100%);
+    color: var(--text);
 }
 
 .register-page > .topbar {
@@ -496,6 +496,43 @@ h1 {
 
 .register-shell {
     margin-block: auto;
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    box-shadow: 0 28px 70px rgba(2, 6, 23, 0.55);
+}
+
+.register-shell h1 {
+    color: var(--text);
+}
+
+.register-shell > div > p,
+.register-shell label,
+.register-shell > p {
+    color: var(--muted);
+}
+
+.register-shell input {
+    border-color: rgba(148, 163, 184, 0.4);
+    background: rgba(2, 8, 23, 0.65);
+    color: var(--text);
+}
+
+.register-shell input::placeholder {
+    color: #64748b;
+}
+
+.register-shell input:focus {
+    border-color: rgba(251, 113, 133, 0.8);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(244, 63, 94, 0.2);
+}
+
+.register-shell button {
+    background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+}
+
+.register-shell > p a {
+    color: #fda4af;
 }
 
 .auth-shell {
