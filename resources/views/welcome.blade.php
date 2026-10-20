@@ -10,9 +10,9 @@
 </head>
 
 <body>
-    <div class="container">
-        <x-layout />
+    <x-layout />
 
+    <div class="container">
         <main>
             @if (session('status'))
             <div class="auth-alert auth-alert-success" style="margin-top: 20px;">

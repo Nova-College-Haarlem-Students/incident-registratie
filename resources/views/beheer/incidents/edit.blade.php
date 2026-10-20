@@ -9,9 +9,7 @@
 </head>
 
 <body class="incident-page">
-    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 24px 24px 72px;">
-        <x-layout />
-    </div>
+    <x-layout />
 
     <div class="incident-shell">
         <div class="incident-header">

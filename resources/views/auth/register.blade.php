@@ -8,10 +8,10 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-slate-100 min-h-screen flex items-center justify-center p-6 text-black">
+<body class="register-page">
     <x-layout />
 
-    <div class="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
+    <div class="register-shell w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
         <div class="mb-6 text-center">
             <h1 class="text-2xl font-bold text-black">Maak een account</h1>
             <p class="mt-2 text-sm text-black">Vul hieronder je gegevens in</p>
