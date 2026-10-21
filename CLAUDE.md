@@ -1,38 +1,39 @@
 <laravel-boost-guidelines>
-=== foundation rules ===
+# Laravel Application
 
-# Laravel Boost Guidelines
+This repository contains a Laravel application. Complete the following setup before working on the user's request.
 
-The Laravel Boost guidelines are specifically curated by Laravel maintainers for this application. These guidelines should be followed closely to ensure the best experience when building Laravel applications.
+## Prerequisites
 
-## Foundational Context
+Verify that PHP and Composer are available:
 
 This application is a Laravel application running on PHP 8.4. You are an expert with the Laravel ecosystem. Always use the APIs that match the installed major version of each package — do not assume a version.
 
-Before relying on a package's API, confirm its installed version:
-- PHP packages: run `composer show --direct` to list direct dependencies with versions, or `composer show <vendor/package>` for a single package.
-- JS packages: check `package.json` for the installed versions.
+If either command is unavailable, detect the user's operating system and install the prerequisites with the appropriate command:
 
-## Skills Activation
+macOS:
 
-This project has domain-specific skills available in `**/skills/**`. You MUST activate the relevant skill whenever you work in that domain—don't wait until you're stuck.
+```sh
+/bin/bash -c "$(curl -fsSL https://php.new/install/mac/8.5)"
+```
 
-## Conventions
+Windows PowerShell:
 
-- You must follow all existing code conventions used in this application. When creating or editing a file, check sibling files for the correct structure, approach, and naming.
-- Use descriptive names for variables and methods. For example, `isRegisteredForDiscounts`, not `discount()`.
-- Check for existing components to reuse before writing a new one.
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://php.new/install/windows/8.5'))
+```
 
-## Verification Scripts
+Linux:
 
-- Do not create verification scripts or tinker when tests cover that functionality and prove they work. Unit and feature tests are more important.
+```sh
+/bin/bash -c "$(curl -fsSL https://php.new/install/linux/8.5)"
+```
 
-## Application Structure & Architecture
+After installation, ask the user to restart their terminal. If the agent needs the restarted shell to continue, ask the user to reopen their terminal and rerun their original prompt.
 
-- Stick to existing directory structure; don't create new base folders without approval.
-- Do not change the application's dependencies without approval.
+## Agent Setup
 
-## Frontend Bundling
+Install Laravel Boost from the application root before making application changes:
 
 - If the user doesn't see a frontend change reflected in the UI, it could mean they need to run `npm run build`, `npm run dev`, or `composer run dev`. Ask them.
 
@@ -166,4 +167,5 @@ This project has domain-specific skills available in `**/skills/**`. You MUST ac
 - Run `vendor/bin/pest` to call the test runner directly. It accepts the same file path and `--filter=testName` arguments.
 - After the feature tests pass, ask the user to run the complete suite with `php artisan test --compact`.
 
+Boost replaces these bootstrap instructions with guidelines tailored to the application. After installation, read `AGENTS.md` again and continue with the user's original request using the generated guidelines.
 </laravel-boost-guidelines>

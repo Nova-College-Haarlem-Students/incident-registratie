@@ -1,29 +1,9 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\BeheerController;
-use App\Http\Controllers\IncidentController;
-use App\Models\Incident;
 use Illuminate\Support\Facades\Route;
 
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-
 Route::get('/', function () {
-    $incidentCount = Incident::count();
-    $resolvedCount = Incident::where('status', 'Opgelost')->count();
-
-    return view('welcome', [
-        'incidentCount' => $incidentCount,
-        'openIncidentCount' => Incident::where('status', '!=', 'Opgelost')->count(),
-        'resolvedPercentage' => $incidentCount === 0 ? 0 : round(($resolvedCount / $incidentCount) * 100),
-        'recentIncidents' => Incident::latest('occurred_at')->take(3)->get(),
-    ]);
-})->name('home');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/incidents', [IncidentController::class, 'index'])->name('incidents.index');
-    Route::get('/incidents/create', [IncidentController::class, 'create'])->name('incidents.create');
-    Route::post('/incidents', [IncidentController::class, 'store'])->name('incidents.store');
+    return view('welcome');
 });
 
 Route::middleware(['auth', 'coordinator'])->prefix('beheer')->name('beheer.')->group(function () {
