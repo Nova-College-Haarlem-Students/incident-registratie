@@ -31,6 +31,7 @@ Route::middleware(['auth', 'coordinator'])->prefix('beheer')->name('beheer.')->g
     Route::patch('/incidents/{incident}', [BeheerController::class, 'updateIncident'])->name('incidents.update');
 });
 
+
 Route::middleware(['auth', 'beheerder'])->prefix('beheer')->name('beheer.')->group(function () {
     Route::get('/', [BeheerController::class, 'index'])->name('index');
     Route::delete('/incidents/{incident}', [BeheerController::class, 'destroyIncident'])->name('incidents.destroy');
